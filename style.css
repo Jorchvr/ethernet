@@ -63,27 +63,29 @@ body {
 }
 
 .title {
-  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-size: clamp(1.4rem, 4.5vw, 3rem);
   color: #fff;
   text-shadow:
     3px 3px 0 var(--accent-2),
     6px 6px 0 var(--dark),
     0 0 20px rgba(255, 255, 255, 0.4);
   margin-bottom: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.4;
   letter-spacing: 0.02em;
+  word-spacing: 0.15em;
   user-select: none;
+}
+
+.title .word {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0 0.15em;
 }
 
 .title .wobble {
   display: inline-block;
   animation: wobble 2.4s ease-in-out infinite;
   animation-delay: calc(var(--i) * 0.08s);
-}
-
-.title .space {
-  display: inline-block;
-  width: 0.4em;
 }
 
 .title .bang {
@@ -324,6 +326,15 @@ body {
 }
 
 @media (max-width: 480px) {
+  .title {
+    font-size: clamp(1.15rem, 5.5vw, 1.6rem);
+    line-height: 1.5;
+  }
+  .hint { margin-bottom: 1.4rem; }
   .magic-btn { padding: 1rem 1.8rem; }
   .reveal-card { padding: 1rem; }
+}
+
+@media (max-width: 360px) {
+  .title { font-size: 1.05rem; }
 }
